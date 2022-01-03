@@ -5,16 +5,21 @@
     let isHidden = true;
 
     function handleClick() {
+        if (width < 500) {
         isClicked === false ? isClicked = true : isClicked = false;
         isClicked === false ? isHidden = true : isHidden = false;
+        }
     }
 </script>
 
 <svelte:window bind:outerWidth={width}/>
 
 <nav class="navbar">
-    <p on:click={handleClick} class="material-icons {width > 500 ? 'hidden' : ''}{isHidden === true ? 'purple' : 'white'}">{isClicked === true ? 'menu_open' : 'menu'}</p>
-    <ul class="navlist {width < 500 ? "mobile" : 'desktop'} {isHidden === true ? 'hidden' : ''}">
+    {#if width < 500}
+        <p on:click={handleClick} class="material-icons hamburger {isHidden === true ? 'purple' : 'white'}">{isClicked === true ? 'menu_open' : 'menu'}</p>
+
+    {/if}
+    <ul on:click={handleClick} class="navlist {width < 500 ? "mobile" : 'desktop'} {isHidden === true && width < 500 ? 'hidden' : ''}">
         <Link icon='home' current_heading="Welcome to the Dad-a-Base!" text="Home" current_caption='home'/>
         <Link icon='explore' current_heading="All Jokes" text="All Jokes" current_caption='all'/>
         <Link icon='shuffle_on' current_heading="Random Joke" text="Random Joke" current_caption='random'/>
@@ -43,6 +48,12 @@
         color: var(--light-text);
         background-color: var(--main-purple);
     }
+    .hamburger {
+        display: flex;
+        font-weight: 700;
+        justify-content: flex-end;
+        padding: 1rem;
+    }
     .hidden {
         display: none;
     }
@@ -51,5 +62,6 @@
     }
     .white {
         color: var(--light-text);
+        background-color: var(--main-purple);
     }
 </style>

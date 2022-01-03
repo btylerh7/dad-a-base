@@ -18,7 +18,6 @@
 	{#if $isRandom}
 		<RandomJoke />
 	{/if}
-	<h1>Width: {width}</h1>
 </main>
 
 <style>

@@ -24,7 +24,7 @@
 
 <style>
     .card {
-        margin: 1rem auto;
+        margin: 1rem;
         max-width: 500px;
         padding: 1rem;
         border: 1px inset var(--dark-text);
