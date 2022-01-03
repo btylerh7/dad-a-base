@@ -4,7 +4,9 @@
 	import RandomJoke from './components/RandomJoke.svelte'
 	import {caption, heading} from './stores/headings';
 	import { isAll, isRandom } from './stores/jokes';
+	let width;
 </script>
+<svelte:window bind:outerWidth={width}/>
 
 <Nav/>
 <main>
@@ -16,6 +18,7 @@
 	{#if $isRandom}
 		<RandomJoke />
 	{/if}
+	<h1>Width: {width}</h1>
 </main>
 
 <style>
