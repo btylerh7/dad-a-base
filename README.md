@@ -7,5 +7,5 @@ I make sure to carefully check all jokes to avoid anything that could be deemed 
 ## Navigation
 You can either view a random joke or see a list of all jokes.
 
-**Note: Because Heroku has dropped their free plan, this project is no longer running. The site itself is not hosted on Heroku, but the backend is. I will be moving it to a new platform soon.**
+**Note: Because Heroku has dropped their free plan, this project is no longer running. The site itself is not hosted on Heroku, but the backend is. You can still view the design, but the jokes will not load. I will be moving it to a new platform soon.**
 
