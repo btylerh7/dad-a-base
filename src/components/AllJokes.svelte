@@ -1,6 +1,6 @@
 <script>
     async function getJokes () {
-        const response = await fetch('https://shielded-sierra-55191.herokuapp.com/api/jokes');
+        const response = await fetch('https://dad-joke-api.onrender.com/api/jokes');
         const jokes = await response.json();
         return jokes;
     }
