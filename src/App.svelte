@@ -1,11 +1,12 @@
-<script>
+<script lang="ts">
 	import Nav from './components/Nav.svelte';
 	import AllJokes from './components/AllJokes.svelte';
 	import RandomJoke from './components/RandomJoke.svelte'
-	import {caption, heading} from './stores/headings';
-	import { isAll, isRandom } from './stores/jokes';
+	import {caption, heading} from './stores/headings.js';
+	import { isAll, isRandom } from './stores/jokes.js';
 	let width;
 </script>
+
 <svelte:window bind:outerWidth={width}/>
 
 <Nav/>
